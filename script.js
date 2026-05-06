@@ -96,7 +96,12 @@ function highlight() {
 
 // MOSTRAR PLAYER
 function showPlayer() {
-  document.querySelector(".player").style.display = "block";
+  const player = document.querySelector(".player");
+  
+  player.style.display = "block";
+  player.style.transition = "opacity 0.5s ease";
+  player.style.borderTopLeftRadius = "10px";
+  player.style.borderTopRightRadius = "10px";
 }
 
 // TOCAR MÚSICA
