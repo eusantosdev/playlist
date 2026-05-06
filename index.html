@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="shortcut icon" type="imagex/png" href="images/icon_browser.png">
+<link rel="stylesheet" href="style.css">
+<title>Playlist Oficial - GCJA 2026</title>
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="images/capa_playlist.jpg" class="cover">
+
+<div class="buttons">
+  <button class="btn play" onclick="playSong(0)">
+  <i class="fa-solid fa-play"></i> Iniciar
+  </button> 
+
+  <button class="btn share" onclick="share()">
+  <i class="fa-solid fa-share-nodes"></i> Compartilhar
+  </button>
+</div>
+
+<h3 class="playlist-title">PLAYLIST OFICIAL - GCJA 2026</h3>
+
+<div id="playlist"></div>
+
+<div class="cta">
+  <h3>Essa playlist não pode ficar de fora 🎧</h3>
+  <p>Prepare seu coração e entre no clima do congresso!</p>
+
+  <a href="https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M"
+   target="_blank"
+   class="spotify-btn">
+    <i class="fa-brands fa-spotify"></i>
+    Salvar no Spotify
+  </a>
+</div>
+
+<footer class="footer">
+
+  <p>© 2026 Assembleia de Deus - Área 33</p>
+
+  <p>GCJA</p>
+
+  <p class="verse">
+    “Tudo quanto tem fôlego louve ao Senhor.” - Salmos 150:6
+  </p>
+
+  <div class="social">
+    <a href="https://instagram.com/ieadpe33"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+
+  <p>
+    Desenvolvido por 
+    <a href="https://instagram.com/rufino.real" target="_blank">
+      Alessandro Rufino
+    </a>
+  </p>
+
+</footer>
+
+</div>
+
+<!-- PLAYER -->
+<div class="player">
+  <div class="player-content">
+    <img id="coverMini" src="capa.jpg">
+    <div>
+      <div id="title">Nenhum hino</div>
+      <div id="author" class="song-meta">Autor</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button onclick="prev()">
+        <i class="fa-solid fa-backward-step"></i>
+    </button>
+
+    <button onclick="toggle()">
+        <i class="fa-solid fa-circle-play" id="playIcon"></i>
+    </button>
+
+    <button onclick="next()">
+        <i class="fa-solid fa-forward-step"></i>
+    </button>
+  </div>
+
+  <input type="range" id="progress" class="progress" value="0">
+
+  <audio id="audio"></audio>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
