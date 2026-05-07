@@ -11,89 +11,91 @@
 
 <body>
 
-<div class="container">
+<main>
 
-<img src="images/capa_playlist.jpg" class="cover">
+  <div class="container">
 
-<div class="buttons">
-  <button class="btn play" onclick="playSong(0)">
-  <i class="fa-solid fa-play"></i> Iniciar
-  </button> 
+  <section>
+    <img src="images/capa_playlist.jpg" class="cover">
 
-  <button class="btn share" onclick="share()">
-  <i class="fa-solid fa-share-nodes"></i> Compartilhar
-  </button>
-</div>
+    <div class="buttons">
+      <button class="btn play" onclick="playSong(0)">
+      <i class="fa-solid fa-play"></i> Iniciar
+      </button> 
 
-<h3 class="playlist-title">PLAYLIST OFICIAL - GCJA 2026</h3>
-
-<div id="playlist"></div>
-
-<div class="cta">
-  <h3>Essa playlist não pode ficar de fora 🎧</h3>
-  <p>Prepare seu coração e entre no clima do congresso!</p>
-
-  <a href="https://open.spotify.com/playlist/7FXHXKpwASm0NJnLW7VQ64?si=f889c2aa500049a5"
-   target="_blank"
-   class="spotify-btn">
-    <i class="fa-brands fa-spotify"></i>
-    Salvar no Spotify
-  </a>
-</div>
-
-<footer class="footer">
-
-  <p>© 2026 Assembleia de Deus - Área 33</p>
-
-  <p>GCJA</p>
-
-  <p class="verse">
-    “Tudo quanto tem fôlego louve ao Senhor.” - Salmos 150:6
-  </p>
-
-  <div class="social">
-    <a href="https://instagram.com/ieadpe33"><i class="fa-brands fa-instagram"></i></a>
-  </div>
-
-  <p>
-    Desenvolvido por 
-    <a href="https://instagram.com/rufino.real" target="_blank">
-      Alessandro Rufino
-    </a>
-  </p>
-
-</footer>
-
-</div>
-
-<!-- PLAYER -->
-<div class="player">
-  <div class="player-content">
-    <img id="coverMini" src="capa.jpg">
-    <div>
-      <div id="title">Nenhum hino</div>
-      <div id="author" class="song-meta">Autor</div>
+      <button class="btn share" onclick="share()">
+      <i class="fa-solid fa-share-nodes"></i> Compartilhar
+      </button>
     </div>
+  </section>
+
+  <section class="track-list">
+    <h3 class="track-list-title">PLAYLIST OFICIAL - GCJA 2026</h3>
+
+    <div id="track-list"></div>
+  </section>
+
+  <section class="cta-spotify">
+    <h3>Essa playlist não pode ficar de fora 🎧</h3>
+    <p>Prepare seu coração e entre no clima do congresso!</p>
+
+    <a href="https://open.spotify.com/playlist/7FXHXKpwASm0NJnLW7VQ64?si=f889c2aa500049a5"
+    target="_blank"
+    class="spotify-btn">
+      <i class="fa-brands fa-spotify"></i>
+      Salvar no Spotify
+    </a>
+  </section>
+
+  <footer class="footer">
+    <p>Todos os direitos reservados: IEADPE33</p>
+
+    <p class="verse">
+      “Tudo quanto tem fôlego louve ao Senhor.” - Salmos 150:6
+    </p>
+    <div class="social">
+      <a href="https://instagram.com/ieadpe33"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <p>
+      Desenvolvido por 
+      <a href="https://instagram.com/rufino.real" target="_blank">
+        Alessandro Rufino
+      </a>
+    </p>
+  </footer>
+
   </div>
 
-  <div class="controls">
-    <button onclick="prev()">
-        <i class="fa-solid fa-backward-step"></i>
-    </button>
+  <div class="player">
+  
+      <div class="player-content">
+      <img id="coverMini" src="capa.jpg">
+      <div>
+        <div id="title">Nenhum hino</div>
+        <div id="author" class="song-meta">Autor</div>
+      </div>
+    </div>
 
-    <button onclick="toggle()">
-        <i class="fa-solid fa-circle-play" id="playIcon"></i>
-    </button>
+    <div class="controls">
+      <button onclick="prev()">
+          <i class="fa-solid fa-backward-step"></i>
+      </button>
 
-    <button onclick="next()">
-        <i class="fa-solid fa-forward-step"></i>
-    </button>
+      <button onclick="toggle()">
+          <i class="fa-solid fa-circle-play" id="playIcon"></i>
+      </button>
+
+      <button onclick="next()">
+          <i class="fa-solid fa-forward-step"></i>
+      </button>
+    </div>
+
+    <input type="range" id="progress" class="progress" value="0">
+
+    <audio id="audio"></audio>
   </div>
 
-  <input type="range" id="progress" class="progress" value="0">
-
-  <audio id="audio"></audio>
-</div>
+</main>
 
 <script src="script.js"></script>
 

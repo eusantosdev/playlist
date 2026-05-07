@@ -1,17 +1,36 @@
 const songs = [
   {
     title: "Maravilhoso és, Rei Santo, Sopra Espírito",
-    author: "Medley",
+    author: "Canção & Louvor",
     file: "songs/medley_maravilhoso_es.mp3",
     cover: "images/capa_medley_maravilhoso_es.jpg",
-    time: "5:27"
+    duration: "5:27",
+    theme: {
+      primary: "#DBCBB2",
+      secondary: "#5A3A2C"
+    },
+    lyrics: [
+      {
+        time: 1,
+        text: "Maravilhoso"
+      },
+    ],
   },
   {
     title: "Feliz Serás, Como um Anjo serei, céu, morada de Deus",
     author: "Medley",
     file: "songs/feliz_seras.mp3",
     cover: "images/capa_medley_feliz_seras.jpg",
-    time: "5:46"
+    theme: {
+      primary: "#DBCBB2",
+      secondary: "#5A3A2C"
+    },
+    lyrics: [
+      {
+        time: 1,
+      }
+    ],
+    duration: "5:46"
   },
   {
     title: "Tudo é Perda",
@@ -51,21 +70,22 @@ const title = document.getElementById("title");
 const author = document.getElementById("author");
 const coverMini = document.getElementById("coverMini");
 const progress = document.getElementById("progress");
-const playlistDiv = document.getElementById("playlist");
+const playlistDiv = document.getElementById("track-list");
 
 // RENDER PLAYLIST
-function renderPlaylist() {
-  songs.forEach((s, i) => {
-    const div = document.createElement("div");
-    div.className = "song";
+function renderPlaylist() {  // FUNÇÃO
+  songs.forEach((s, i) => {  // PERCORRE O ARRAY SONGS, S COMO CADA ELEMENTO E I COMO I INDEX DE CADA ELEMENTO
+    const div = document.createElement("div"); // CRIA UMA DIV
+    div.className = "song"; // NOME DA DIV
 
-    div.innerHTML = `
+    //ADICIONA HTML NESSA NOVA DIV
+    div.innerHTML = ` 
       <div style="display:flex;align-items:center;gap:10px;">
         <img src="${s.cover}" class="song-cover">
         <div>
           <div>${s.title}</div>
           <div class="song-meta">${s.author}</div>
-          <div class="song-meta">${s.time}</div>
+          <div class="song-meta">${s.duration}</div>
         </div>
       </div>
     <span class="play-icon" id="icon-${i}">▶</span>`;
@@ -96,12 +116,12 @@ function highlight() {
 
 // MOSTRAR PLAYER
 function showPlayer() {
-  const player = document.querySelector(".player");
+  const player = document.querySelector(".player"); // DIV PLAYER
   
   player.style.display = "block";
   player.style.transition = "opacity 0.5s ease";
-  player.style.borderTopLeftRadius = "10px";
-  player.style.borderTopRightRadius = "10px";
+  player.style.borderTopLeftRadius = "16px";
+  player.style.borderTopRightRadius = "16px";
 }
 
 // TOCAR MÚSICA
@@ -199,3 +219,4 @@ function share() {
 
 // INIT
 renderPlaylist();
+
